@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import DialogBox from './components/DialogBox'
+import BasicPopover from './components/popover.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -33,6 +34,10 @@ function App() {
         <button style={{marginLeft: '1rem'}} onClick={() => setShowDialog(true)}>
           Ouvrir la boîte de dialogue
         </button>
+        <BasicPopover>
+  <button>Ouvrir le popover</button>
+  <div>Contenu du popover</div>
+</BasicPopover>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
