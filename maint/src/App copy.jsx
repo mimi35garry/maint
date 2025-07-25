@@ -2,21 +2,12 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import DialogBox from './components/DialogBox'
 
 function App() {
   const [count, setCount] = useState(0)
-  const [showDialog, setShowDialog] = useState(false)
 
   return (
     <>
-      {showDialog && (
-        <DialogBox
-          title="Bienvenue !"
-          message="Ceci est une boîte de dialogue personnalisée."
-          onClose={() => setShowDialog(false)}
-        />
-      )}
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -29,9 +20,6 @@ function App() {
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
-        </button>
-        <button style={{marginLeft: '1rem'}} onClick={() => setShowDialog(true)}>
-          Ouvrir la boîte de dialogue
         </button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
