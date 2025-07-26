@@ -1,13 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import DialogBox from './components/DialogBox'
-import BasicPopover from './components/popover.jsx'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import DialogBox from "./components/DialogBox";
+import BasicPopover from "./components/popover.jsx";
+import MaterialTable from "./components/materialtable.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [showDialog, setShowDialog] = useState(false)
+  const [count, setCount] = useState(0);
+  const [showDialog, setShowDialog] = useState(false);
 
   return (
     <>
@@ -31,13 +32,17 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <button style={{marginLeft: '1rem'}} onClick={() => setShowDialog(true)}>
+        <button
+          style={{ marginLeft: "1rem" }}
+          onClick={() => setShowDialog(true)}
+        >
           Ouvrir la boîte de dialogue
         </button>
         <BasicPopover>
-  <button>Ouvrir le popover</button>
-  <div>Contenu du popover</div>
-</BasicPopover>
+          <button>Ouvrir le popover</button>
+          <div>Contenu du popover</div>
+        </BasicPopover>
+        <MaterialTable />
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
@@ -46,7 +51,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
