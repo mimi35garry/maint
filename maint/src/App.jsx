@@ -5,10 +5,19 @@ import "./App.css";
 import DialogBox from "./components/DialogBox";
 import BasicPopover from "./components/popover.jsx";
 import MaterialTable from "./components/materialtable.jsx";
+import CreateMaterielForm from "./components/CreateMaterielForm";
+import "./components/CreateMaterielForm.css";
 
 function App() {
   const [count, setCount] = useState(0);
   const [showDialog, setShowDialog] = useState(false);
+  const [showCreateForm, setShowCreateForm] = useState(false);
+
+  const handleCreateMateriel = (data) => {
+    // Ici, vous pouvez envoyer les données à votre backend ou les stocker dans un état
+    alert(`Matériel créé : ${data.nom} (${data.type})`);
+    setShowCreateForm(false);
+  };
 
   return (
     <>
@@ -17,6 +26,12 @@ function App() {
           title="Bienvenue !"
           message="Ceci est une boîte de dialogue personnalisée."
           onClose={() => setShowDialog(false)}
+        />
+      )}
+      {showCreateForm && (
+        <CreateMaterielForm
+          onSubmit={handleCreateMateriel}
+          onCancel={() => setShowCreateForm(false)}
         />
       )}
       <div>
@@ -37,6 +52,12 @@ function App() {
           onClick={() => setShowDialog(true)}
         >
           Ouvrir la boîte de dialogue
+        </button>
+        <button
+          style={{ marginLeft: "1rem" }}
+          onClick={() => setShowCreateForm(true)}
+        >
+          Créer un matériel
         </button>
         <BasicPopover>
           <button>Ouvrir le popover</button>

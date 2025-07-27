@@ -1,4 +1,4 @@
--- CreateTable
+q-- CreateTable
 CREATE TABLE "Materiel" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "reference" TEXT NOT NULL,
