@@ -12,7 +12,7 @@ generator client {
 datasource db {
   provider = "sqlite"
   //url      = env("DATABASE_URL")
-  url= "file:./db"
+  url= "file:./dev.db"
 }
 model Materiel {
   id  String @id @default(cuid())
